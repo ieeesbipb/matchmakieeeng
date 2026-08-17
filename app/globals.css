@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --background: 222.2 84% 4.9%; /* Dark Navy */
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 100% 50%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --radius: 0.5rem;
+}
+
+@theme {
+  /* IEEE IPB Inspired Navy Blue Base Palette */
+  --color-navy-50: #E6EBF5;
+  --color-navy-100: #CCD7EB;
+  --color-navy-200: #99AFD7;
+  --color-navy-300: #6687C3;
+  --color-navy-400: #335FAF;
+  --color-navy-500: #003C7D; /* Primary Navy */
+  --color-navy-600: #003066;
+  --color-navy-700: #00244E;
+  --color-navy-800: #0A1A2F; /* Updated Base */
+  --color-navy-900: #000C1F;
+  --color-navy-950: #050C16;
+
+  /* New Design System Colors */
+  --color-deep-navy: #0A1A2F;
+  --color-mid-blue: #134F9A;
+  --color-slate-blue: #1E293B;
+
+  /* Supporting Accent Colors (from IEEE IPB branding) */
+  --color-accent-blue: #00629B;
+  --color-accent-cyan: #00A9E0;
+  --color-accent-teal: #0097A9;
+  --color-accent-gold: #FFB81C;
+
+  /* Mapped components */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: "Inter", "Helvetica", "Arial", "sans-serif";
+
+  --animate-star-float: star-float 2s ease-in-out forwards;
+  --animate-glow-pulse: glow-pulse 0.65s ease-in-out infinite;
+
+  @keyframes star-float {
+    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+    15% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: translate(var(--star-dx, -20px), var(--star-dy, -20px)) scale(0.2); opacity: 0; }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.9; }
+  }
+}
+
+.glass-nav {
+  background-color: rgba(10, 26, 47, 0.8); /* deep-navy / 80 */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.glass-dark {
+  background-color: rgba(10, 26, 47, 0.6); /* deep-navy / 60 */
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card-premium {
+  background-color: rgba(30, 41, 59, 0.5); /* slate-blue / 50 */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-premium:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-cyan-400), var(--color-blue-500));
+}
+
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-yellow-400), var(--color-orange-500), var(--color-yellow-600));
+}
+
+.circuit-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+}
+
+.grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-deep-navy);
+  color: var(--color-foreground);
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
